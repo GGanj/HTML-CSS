@@ -1,0 +1,27 @@
+.canvasStyle {
+    width: 400px;
+    height:200px;
+    border: 1px solid #000000
+}
+
+.drag2Ele {
+    width: 100px;
+    height: 100px;
+    background: green;
+}
+
+.dragDivStyle {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    padding: 10px 10px;
+}
+
+.inputTypeName {
+    float: right;
+}
+
+.inputType {
+    width: 150px;
+}

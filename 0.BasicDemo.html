@@ -2,6 +2,8 @@
 <!-- 有时需要声明为 HTML 4.01 或 XHTML 1.0-->
 <!DOCTYPE html>
 
+<html>
+
 <head>
     <!-- 包含中文，声明编码格式为 UTF-8 -->
     <meta charset="UTF-8">
@@ -19,21 +21,22 @@
     <!-- <base href="http://www.bing.com" target="_blank"> -->
     <!-- 内部样式 -->
     <style type='text/css'>
-        .table{
+        .table {
             border: solid 1px;
         }
     </style>
     <!-- 外联样式 -->
-    <link>
+    <!-- <link rel="stylesheet" type="text/css" href="CSS/1.HTML5Demo.scss"> -->
     <!-- 加载脚本 -->
     <script>
         document.write("Hello JavaScript");
     </script>
 </head>
+
 <body>
     <!-- 绝大多数元素拥有以下4种属性：ID，唯一； style，定义元素样式； class，为元素引入某样式类； tittle，作为工具，描述额外信息 -->
     <h1 id="helloWorld" style="color:blue" class="className" tittle="moreInfo">Hello World!</h1>
-    <hr/>
+    <hr />
     <!-- 字体效果 -->
     <table class="table">
         <td><b>加粗</b></td>
@@ -43,7 +46,7 @@
         <td><ins>插入</ins></td>
         <td><del>删除</del></td>
     </table>
-    <hr/>
+    <hr />
     <!-- 图片以及区域映射 -->
     <img src="./img/planets.gif" alt="Planets" usemap="#planetmap">
     <map name="planetmap">
@@ -51,7 +54,7 @@
         <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
         <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
     </map>
-    <hr/>
+    <hr />
     <!-- 无序列表 -->
     <ul>
         <li>1</li>
@@ -62,7 +65,7 @@
         <li>1</li>
         <li>2</li>
     </ol>
-    <hr/>
+    <hr />
     <!-- 表单 -->
     <form>
         First Name: <input type="text" name="firstName"><br>
@@ -76,7 +79,9 @@
         <input type="reset" value="reset">
     </form>
 
-    <hr/>
+    <hr />
     <!-- 跳转到超链接或指定ID的元素位置 -->
     <a href="#helloWord">位置跳转</a>
 </body>
+
+</html>
