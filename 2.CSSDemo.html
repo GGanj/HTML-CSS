@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS Demo</title>
+    <link rel="stylesheet" type="text/css" href="./CSS/2.CSSDemo.css">
+</head>
+
+<body>
+    Box Model
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <hr>
+    Position
+    <div class="positionContainer">
+        <div class="positionDemo positionStatic">Static</div>
+        <div class="positionDemo positionRelative">Relative</div>
+        <div class="positionDemo positionFixed">Fixed</div>
+        <div class="positionDemo positionAbsolute">Absolute</div>
+    </div>
+    <div class="positionContainer positionDemo positionSticky">Sticky</div>
+    <hr>
+    <div>
+        Float
+    </div>
+    <div class="floatDemo"></div>
+    <div class="floatDemo"></div>
+    <div class="floatDemo"></div>
+    <div class="floatDemo"></div>
+    <div class="floatDemo"></div>
+    <div class="floatDemo"></div>
+    <div class="floatDemo"></div>
+    <div class="floatDemo"></div>
+    <hr style="clear:both">
+    组合选择器
+    <div class="parent1">
+        后代选择：<br>
+        父元素1:
+        <a>子元素a1</a>
+        <a>子元素a2</a>
+        <div style="display:inline-block">
+            <a>孙元素b1</a>
+        </div>
+        <div style="display:inline-block">
+            <a>孙元素b2</a>
+        </div>
+    </div>
+    <div class="parent2">
+        子元素选择：<br>
+        父元素1:
+        <a>子元素a1</a>
+        <a>子元素a2</a>
+        <div style="display:inline-block">
+            <a>孙元素b1</a>
+        </div>
+        <div style="display:inline-block">
+            <a>孙元素b2</a>
+        </div>
+    </div>
+    <div class="parent3">
+        相邻兄弟元素选择：<br>
+        父元素1:
+        <a>子元素a1</a>
+        <a>子元素a2</a>
+        <div class="subContainer1">
+            <a>孙元素b1</a>
+        </div>
+        <a>子元素a3</a>
+        <a>子元素a4</a>
+        <div style="display:inline-block">
+            <a>孙元素b2</a>
+        </div>
+        <a>子元素a5</a>
+        <a>子元素a6</a>
+    </div>
+    <div class="parent4">
+        后续兄弟元素选择：<br>
+        父元素1:
+        <a>子元素a1</a>
+        <a>子元素a2</a>
+        <div class="subContainer2">
+            <a>孙元素b1</a>
+        </div>
+        <a>子元素a3</a>
+        <a>子元素a4</a>
+        <div style="display:inline-block">
+            <a>孙元素b2</a>
+        </div>
+        <a>子元素a5</a>
+        <a>子元素a6</a>
+    </div>
+    <hr>
+    Tips
+    <table class="tipsContainer">
+        <tr>
+            <th class="topTip">
+                上部显示
+                <div class="topTipText">上部提示文本</div>
+            </th>
+            <th class="rightTip">
+                右部显示
+                <div class="rightTipText">右部提示文本</div>
+            </th>
+            <th class="bottomTip">
+                下部显示
+                <div class="bottomTipText">下部提示文本</div>
+            </th>
+            <th class="leftTip">
+                左部显示
+                <div class="leftTipText">左部提示文本</div>
+            </th>
+        </tr>
+    </table>
+    <hr>
+    图像拼合(多张图像组合为一张，每次仅显示其中一部分)<br>
+    <img class="homeImage" src="./img/img_trans.gif"> | 
+    <img class="beforeImage"  src="./img/img_trans.gif"> |
+    <img class="nextImage"  src="./img/img_trans.gif">
+
+    <ul class="imgNav">
+        <li class="homeImageNav"></li>
+        <li class="beforeImageNav"></li>
+        <li class="nextImageNav"></li>
+    </ul>
+
+
+</body>
+
+</html>

@@ -1,0 +1,360 @@
+.box1 {
+    background: red;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.box2 {
+    background: green;
+    /* 
+    dotted 点边框
+    dashed 虚线边框
+    solid 实线边框
+    double 双实线边框
+    groove 3D沟槽边框
+    ridge 3D脊边框
+    inset 3D嵌入边框
+    outset 3D突出边框
+    */
+    border: 2px yellow solid;
+    outline: 3px blue solid;
+    margin: 20px;
+    
+    padding: 20px;
+    color: yellow;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+.positionContainer {
+    position: relative;
+    width: 800px;
+    margin: auto;
+}
+.positionDemo {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    color: red;
+    
+}
+
+.positionStatic {
+    position: static;
+    background: yellow;
+}
+
+.positionRelative {
+    position: relative;
+    background: gray;
+    left: 50px;
+}
+
+.positionFixed {
+    position: fixed;
+    background: orange;
+    right: 10px;
+}
+
+.positionAbsolute {
+    position: absolute;
+    background: pink;
+    right: 50px;
+}
+
+.positionSticky {
+    position: sticky;
+    background: skyblue;
+    top: 20px;
+    left: 150px;
+}
+
+.floatDemo {
+    width: 200px;
+    height: 200px;
+    background: green;
+    margin: 10px;
+    float: left;
+}
+
+.parent1 {
+    background: red;
+    padding: 10px;
+}
+
+.parent1 a {
+    background: green;
+    padding: 5px;
+}
+
+.parent2 {
+    background: red;
+    padding: 10px;
+}
+
+.parent2>a {
+    background: green;
+    padding: 5px;
+}
+
+.parent3 {
+    background: skyblue;
+    padding: 10px;
+}
+
+.subContainer1 {
+    display: inline-block;
+    background: red;
+    padding: 5px;
+}
+
+.subContainer1+a {
+    background: green;
+    padding: 5px;
+}
+
+.parent4 {
+    background: skyblue;
+    padding: 10px;
+}
+
+.subContainer2 {
+    display: inline-block;
+    background: red;
+    padding: 5px;
+}
+
+.subContainer2~a {
+    background: green;
+    padding: 5px;
+}
+
+.tipsContainer {
+    border: 1px black solid;
+    margin-left: 50px;;
+}
+
+.tipsContainer th{
+    position: relative;
+    border-left: 1px black solid;
+    padding: 2px 5px;
+}
+
+.tipsContainer th:first-child{
+    border-left: none;
+}
+
+.topTipText {
+    /* 定位 */
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    /* 样式 */
+    background: black;
+    color: white;
+    border-radius: 5px;
+    font-weight: 200;
+    text-align: center;
+    padding: 2px 4px;
+    width: 120px;
+    visibility: hidden;
+    /* 淡入 */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.topTip:hover .topTipText{
+    visibility: visible;
+    opacity: 1;
+}
+
+.topTipText:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate( -50%, 0);
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+    border-width: 5px;
+}
+
+.rightTipText {
+    /* 定位 */
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate( 0, -50%);
+    /* 样式 */
+    background: black;
+    color: white;
+    border-radius: 5px;
+    font-weight: 200;
+    text-align: center;
+    padding: 2px 4px;
+    width: 120px;
+    z-index: 1;
+    visibility: hidden;
+    /* 淡入 */
+    opacity: 0;
+    transition: all .25s ease-out;
+    
+}
+
+.rightTip:hover .rightTipText{
+    visibility: visible;
+    opacity: 1;
+    transform: translate( 5px, -50%);
+}
+
+.rightTipText:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translate( 0, -50%);
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+    border-width: 5px;
+}
+
+.bottomTipText {
+    /* 定位 */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    /* 样式 */
+    background: black;
+    color: white;
+    border-radius: 5px;
+    font-weight: 200;
+    text-align: center;
+    padding: 2px 4px;
+    width: 120px;
+    display: none;
+}
+
+.bottomTip:hover .bottomTipText{
+    display: block;
+}
+
+.bottomTipText:after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    right: 50%;
+    transform: translate( 50%, 0);
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+    border-width: 5px;
+}
+
+.leftTipText {
+    /* 定位 */
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translate( 0, -50%);
+    /* 样式 */
+    background: black;
+    color: white;
+    border-radius: 5px;
+    font-weight: 200;
+    text-align: center;
+    padding: 2px 4px;
+    width: 120px;
+    display: none;
+}
+
+.leftTip:hover .leftTipText{
+    display: block;
+}
+
+.leftTipText:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate( 0, -50%);
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+    border-width: 5px;
+}
+
+.homeImage {
+    width: 46px;
+    height: 44px;
+    background: url(../img/img_navsprites.gif) 0 0;
+    opacity: .5;
+}
+
+.homeImage:hover {
+    opacity: 1;
+}
+
+.beforeImage {
+    width: 43px;
+    height: 44px;
+    background: url(../img/img_navsprites.gif) -47px 0;
+    opacity: .5;
+}
+
+.beforeImage:hover {
+    opacity: 1;
+}
+
+.nextImage {
+    width: 43px;
+    height: 44px;
+    background: url(../img/img_navsprites.gif) -91px 0;
+    opacity: .5;
+}
+
+.nextImage:hover {
+    opacity: 1;
+}
+
+.imgNav {
+    position: relative;
+    padding-left: 0px;
+}
+
+.imgNav li {
+    list-style: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+.homeImageNav {
+    width: 46px;
+    height: 44px;
+    background: url("../img/img_navsprites_hover.gif") 0 0;
+}
+
+.homeImageNav:hover {
+    background: url("../img/img_navsprites_hover.gif") 0 -45px;
+}
+
+.beforeImageNav {
+    width: 43px;
+    height: 44px;
+    background: url("../img/img_navsprites_hover.gif") -47px 0;
+}
+
+.beforeImageNav:hover {
+    background: url("../img/img_navsprites_hover.gif") -47px -45px;
+}
+
+.nextImageNav {
+    width: 43px;
+    height: 44px;
+    background: url("../img/img_navsprites_hover.gif") -91px 0;
+}
+
+.nextImageNav:hover {
+    background: url("../img/img_navsprites_hover.gif") -91px -45px;
+}
