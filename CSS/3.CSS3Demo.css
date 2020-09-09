@@ -1,0 +1,833 @@
+.borderRadius1 {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    padding: 10px 20px;
+    border: 2px black solid;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.borderRadius2 {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    padding: 10px 20px;
+    border: 2px black solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 20px;
+    text-align: center;
+}
+
+.borderShadow {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    padding: 10px 20px;
+    /* h-shadow   v-shadow   blur   spread    color   insect */
+    /* 水平阴影   垂直阴影   模糊    阴影尺寸  颜色   外阴影转到内阴影 */
+    box-shadow: 10px 10px 5px #888888;
+    text-align: center;
+    
+}
+
+.borderImage1 {
+    display: inline-block;
+    width: 250px;
+    padding: 20px 20px;
+    margin: 10px;
+    border: 15px transparent solid;
+    border-image: url("../img/border.png") 30 30 round;
+}
+
+.borderImage2 {
+    display: inline-block;
+    width: 250px;
+    padding: 20px 20px;
+    margin: 10px;
+    border: 15px transparent solid;
+    border-image: url("../img/border.png") 30 30 stretch;
+}
+
+.backgroundOrigin1 {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    padding: 45px;
+    margin: 20px;
+    border: 30px gray dotted;
+    background-image: url("../img/sun.gif");
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-origin: border-box;
+}
+
+.backgroundOrigin2 {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    padding: 45px;
+    margin: 20px;
+    border: 30px skyblue dotted;
+    background-image: url("../img/sun.gif");
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-origin: padding-box;
+
+}
+
+.backgroundOrigin3 {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    padding: 45px;
+    margin: 20px;
+    border: 30px pink dotted;
+    background-image: url("../img/sun.gif");
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-origin: content-box;
+}
+
+.backgroundClip1 {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    padding: 45px;
+    margin: 20px;
+    border: 30px gray dotted;
+    background: yellow;
+    background-clip: border-box;
+}
+
+.backgroundClip2 {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    padding: 45px;
+    margin: 20px;
+    border: 30px skyblue dotted;
+    background: yellow;
+    background-clip: padding-box;
+}
+
+.backgroundClip3 {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    padding: 45px;
+    margin: 20px;
+    border: 30px pink dotted;
+    background: yellow;
+    background-clip: content-box;
+}
+
+.linearGradients1 {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    background: linear-gradient( -45deg, red, orange, yellow, green, blue, purple);
+}
+
+.linearGradients2 {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    /* 文档中表示全部为终点位置，但有时是起点，有时是终点-chrome */
+    background: repeating-linear-gradient( 45deg, red 10%, orange 20%, green 40%, blue 50%);
+}
+
+.linearGradients3 {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    background: repeating-linear-gradient( 45deg, red 0%, red 10%, orange 10%, orange 20%, green 20%, green 30%, blue 30%, blue 40%);
+}
+
+.radialGradients1 {
+    display: inline-block;
+    margin-top: 10px;
+    width: 150px;
+    height: 100px;
+    background-image: radial-gradient( red, orange, green, blue);
+}
+
+.radialGradients2 {
+    display: inline-block;
+    margin-top: 10px;
+    /* 调整行内元素垂直对齐所依赖的基线，某些情况下行内元素多行文字，会挤压导致其他元素换行 */
+    vertical-align: bottom;
+    width: 150px;
+    height: 100px;
+    background-image: radial-gradient( red 5%, orange 10%, green 20%, blue 50%);
+}
+
+.radialGradients3 {
+    display: inline-block;
+    margin-top: 10px;
+    width: 150px;
+    height: 100px;
+    background-image: radial-gradient(circle, red, orange, green, blue);
+}
+
+.radialGradients4 {
+    display: inline-block;
+    margin-top: 10px;
+    vertical-align: top;
+    width: 150px;
+    height: 100px;
+    /* 设定圆心的x轴、y轴位置 */
+    background-image: radial-gradient(closest-side at 60% 60%, red, orange, green, blue);
+}
+
+.radialGradients5 {
+    display: inline-block;
+    margin-top: 10px;
+    vertical-align: top;
+    width: 150px;
+    height: 100px;
+    /* 设定圆心的x轴、y轴位置 */
+    background-image: radial-gradient(farthest-side at 60% 60%, red, orange, green, blue);
+}
+
+.radialGradients6 {
+    display: inline-block;
+    margin-top: 10px;
+    vertical-align: top;
+    width: 150px;
+    height: 100px;
+    /* 设定圆心的x轴、y轴位置 */
+    background-image: radial-gradient(closest-corner at 60% 60%, red, orange, green, blue);
+}
+
+.radialGradients7 {
+    display: inline-block;
+    margin-top: 10px;
+    vertical-align: top;
+    width: 150px;
+    height: 100px;
+    /* 设定圆心的x轴、y轴位置 */
+    background-image: radial-gradient(farthest-corner at 60% 60%, red, orange, green, blue);
+}
+
+.radialGradientsRepeat {
+    display: inline-block;
+    margin-top: 10px;
+    vertical-align: top;
+    width: 150px;
+    height: 100px;
+    /* 设定圆心的x轴、y轴位置 */
+    background-image: repeating-radial-gradient(red 10%, orange 15%, green 20%, blue 25%);
+}
+
+.disc {
+    display: inline-block;
+    position: relative;
+    margin-top: 10px;
+    width: 262px; 
+    height: 262px;
+    border-radius: 50%;
+    background: linear-gradient(30deg, transparent 40%, rgba(42, 41, 40, .85) 40%) no-repeat 100% 0, linear-gradient(60deg, rgba(42, 41, 40, .85) 60%, transparent 60%) no-repeat 0 100%, repeating-radial-gradient(#2a2928, #2a2928 4px, #ada9a0 5px, #2a2928 6px);
+    background-size: 50% 100%, 100% 50%, 100% 100%;
+}
+
+.disc:after {
+    position: absolute;
+    top: 50%; left: 50%;
+    margin: -35px;
+    border: solid 1px #d9a388;
+    width: 68px; height: 68px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #da5b33, inset 0 0 0 27px #da5b33;
+    background: #b5ac9a;
+    content: '';
+}
+
+.discSim {
+    display: inline-block;
+    position: relative;
+    margin-top: 10px;
+    width: 262px; 
+    height: 262px;
+    border-radius: 50%;
+    background: repeating-radial-gradient(#2a2928, #2a2928 4px, #ada9a0 5px, #2a2928 6px);
+}
+
+.discSim::before {
+    position: absolute;
+    width: 262px; 
+    height: 262px;
+    border-radius: 50%;
+    background: linear-gradient(30deg, transparent 40%, rgba(42, 41, 40, .85) 40%) no-repeat 100% 0, linear-gradient(60deg, rgba(42, 41, 40, .85) 60%, transparent 60%) no-repeat 0 100%;
+    background-size: 50% 100%, 100% 50%;
+    content: "";
+}
+
+.discSim:after {
+    position: absolute;
+    top: 50%; left: 50%;
+    margin: -35px;
+    border: solid 1px #d9a388;
+    width: 68px; height: 68px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #da5b33, inset 0 0 0 27px #da5b33;
+    background: #b5ac9a;
+    content: '';
+}
+
+.borderGardient {
+    display: inline-block;
+    vertical-align: top;
+    margin: 30px;
+    width: 100px;
+    height: 100px;
+    border: 50px solid;
+    border-image: radial-gradient(circle, transparent 50px, yellow 51px, red) 50 stretch;
+}
+
+.translateDemo {
+    display: inline-block;
+    margin: 10px;
+    width: 150px;
+    height: 100px;
+    background: red;
+}
+
+.translateDemo:hover {
+    transform: translate(15px, 15px);
+}
+
+.rotateDemo {
+    display: inline-block;
+    margin: 10px;
+    width: 150px;
+    height: 100px;
+    background: yellow;
+}
+
+.rotateDemo:hover {
+    transform: rotate(70deg);
+    /* transform: rotateX(70deg); */
+    /* transform: rotateY(70deg); */
+}
+
+.scaleDemo {
+    display: inline-block;
+    margin: 10px;
+    width: 150px;
+    height: 100px;
+    background: green;
+}
+
+.scaleDemo:hover {
+    transform: scale(1.2, 1.5);
+}
+
+
+
+.skewDemo {
+    display: inline-block;
+    margin: 10px;
+    width: 150px;
+    height: 100px;
+    background: blue;
+}
+
+.skewDemo:hover {
+    transform: skew(30deg, 20deg);
+}
+
+.matrixDemo {
+    display: inline-block;
+    margin: 10px;
+    width: 150px;
+    height: 100px;
+    background: gray;
+}
+
+.matrixDemo:hover {
+    /* skewX scaleY scaleX  skewY translateX translateY*/
+    transform: matrix(1, 2 ,3, 4, 5, 6);
+}
+
+.transitionDemo1 {
+    display: inline-block;
+    width: 150px;
+    height: 100px;
+    margin: 10px;
+    background: red;
+    transition: width 1s, height 1s, background 1s, transform 1s;
+}
+
+.transitionDemo1:hover {
+    width: 300px;
+    height: 200px;
+    background: green;
+    transform: rotate(360deg);
+}
+
+.transitionDemo2 {
+    display: inline-block;
+    width: 150px;
+    height: 100px;
+    margin: 10px;
+    background: yellow;
+    /* transition: width 1s, height 1s, background 1s, transform 1s; */
+    transition-property: width, height, background , transform;
+    transition-duration: 1s, 1s, 1s, 1s;
+    transition-timing-function: linear;
+    transition-delay: 0s, 1s, 1s, 0s;
+}
+
+.transitionDemo2:hover {
+    width: 300px;
+    height: 200px;
+    background: blue;
+    transform: rotate(360deg);
+}
+
+@keyframes keyFramesDemo1 {
+    from {
+        background: red;
+        left: 0;
+    }
+    to {
+        background: yellow;
+        left: 80%;
+        transform: rotate(360deg);
+    }
+}
+
+.keyFramesDemo1 {
+    position: relative;
+    width: 150px;
+    height: 100px;
+    margin: 10px;
+    background: red;
+}
+
+.keyFramesDemo1:hover {
+    animation: keyFramesDemo1 2s;
+}
+
+@keyframes keyFramesDemo2 {
+	0%   {background:yellow; left:0px; top:0px;}
+	25%  {background:green; left:200px; top:0px;}
+	50%  {background:blue; left:200px; top:200px;}
+	75%  {background:red; left:0px; top:200px;}
+	100% {background:yellow; left:0px; top:0px;}
+}
+
+.keyFramesDemo2 {
+    position: relative;
+    width: 150px;
+    height: 100px;
+    margin: 10px;
+    background: yellow;
+    animation: keyFramesDemo2 5s linear 2s infinite normal;
+    /* animation-name: keyFramesDemo2;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-play-state: running; */
+}
+
+@keyframes keyFramesDemo3 {
+	0%   {background:green; left:0px; top:0px;}
+	25%  {background:blue; left:200px; top:0px;}
+	50%  {background:red; left:200px; top:200px;}
+	75%  {background:yellow; left:0px; top:200px;}
+	100% {background:green; left:0px; top:0px;}
+}
+
+.keyFramesDemo3 {
+    position: relative;
+    width: 150px;
+    height: 100px;
+    margin: 10px;
+    background: green;
+    /* animation: keyFramesDemo3 5s linear 2s infinite alternate; */
+    animation-name: keyFramesDemo3;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+    z-index: 1;
+}
+
+.filterDemo {
+    width:33%;
+    height: auto;
+    
+    max-width: 235px;
+}
+
+.blur {
+    filter: blur(4px);
+}
+.brightness {
+    filter: brightness(250%);
+}
+.contrast {
+    filter: contrast(180%);
+}
+.grayscale {
+    filter: grayscale(100%);
+}
+.huerotate {
+    filter: hue-rotate(180deg);
+}
+.invert {
+    filter: invert(100%);
+}
+.opacity {
+    filter: opacity(50%);
+}
+.saturate {
+    filter: saturate(7);
+}
+.sepia {
+    filter: sepia(100%);
+}
+.shadow {
+    filter: drop-shadow(8px 8px 10px green);
+}
+
+.modalDemoImg {
+    width: 300px;
+    height: 200px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .25s;
+}
+
+.modalDemoImg:hover {
+    opacity: 0.7;
+}
+
+.myModalDemo {
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-top: 150px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1;
+    display: none;
+}
+
+.closeBtn {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 15px;
+    top: 20px;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.closeBtn:hover {
+    color: gray;
+    opacity: .95;
+}
+
+@keyframes modalFramesDemo {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.modalContentImg {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    animation: modalFramesDemo .6s;
+}
+
+.modalDesc {
+    padding-top: 5px;
+    color: white;
+    text-align: center;
+    animation: modalFramesDemo .6s;
+}
+
+.flexContainer11 {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    background: skyblue;
+}
+
+.flexContainer12 {
+    float: left;
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 10px;
+    padding: 10px;
+    background: skyblue;
+}
+
+.flexContainer13 {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    padding: 10px;
+    background: skyblue;
+}
+
+.flexContainer14 {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 10px;
+    padding: 10px;
+    background: skyblue;
+}
+
+.flexContainer21 {
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px;
+    padding: 10px;
+    background: pink;
+}
+
+.flexContainer22 {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+    padding: 10px;
+    background: pink;
+}
+
+.flexContainer23 {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    background: pink;
+}
+
+.flexContainer24 {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+    background: pink;
+}
+
+.flexContainer25 {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 10px;
+    background: pink;
+}
+
+.flexContainer31 {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px;
+    height: 150px;
+    background: gray;
+}
+
+.flexContainer32 {
+    display: flex;
+    align-items: flex-end;
+    margin: 10px;
+    height: 150px;
+    background: gray;
+}
+
+.flexContainer33 {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    height: 150px;
+    background: gray;
+}
+
+.flexContainer34 {
+    display: flex;
+    align-items: baseline;
+    margin: 10px;
+    height: 150px;
+    background: gray;
+}
+
+.flexContainer35 {
+    display: flex;
+    align-items: stretch;
+    margin: 10px;
+    height: 150px;
+    background: gray;
+}
+
+.flexContainer41 {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 10px;
+    width: 50%;
+    background: skyblue;
+}
+
+.flexContainer42 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    width: 50%;
+    background: skyblue;
+}
+
+.flexContainer43 {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    margin: 10px;
+    width: 50%;
+    background: skyblue;
+}
+
+.flexContainer51 {
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin: 10px;
+    width: 25%;
+    height: 600px;
+    background: pink;
+}
+
+.flexContainer52 {
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    margin: 10px;
+    width: 25%;
+    height: 600px;
+    background: pink;
+}
+
+.flexContainer53 {
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    margin: 10px;
+    width: 25%;
+    height: 600px;
+    background: pink;
+}
+
+.flexContainer54 {
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin: 10px;
+    width: 25%;
+    height: 600px;
+    background: pink;
+}
+
+.flexContainer55 {
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    margin: 10px;
+    width: 25%;
+    height: 600px;
+    background: pink;
+}
+
+.flexContainer56 {
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    margin: 10px;
+    width: 25%;
+    height: 600px;
+    background: pink;
+}
+
+
+.flexItem1 {
+    margin:10px;
+    min-width: 150px;
+    min-height: 100px;
+    background: red;
+}
+
+.flexItem2 {
+    margin:10px;
+    min-width: 150px;
+    min-height: 100px;
+    background: yellow;
+}
+
+.flexItem3 {
+    margin:10px;
+    min-width: 150px;
+    min-height: 100px;
+    background: green;
+}
+
+.flexItem4 {
+    margin:10px;
+    min-width: 150px;
+    min-height: 100px;
+    background: blue;
+}
+
+.flexContainer6 {
+    clear: both;
+    display: flex;
+    margin: 10px;
+    background: orange;
+}
+
+.flexItemOrder1 {
+    order: 1;
+}
+.flexItemOrder2 {
+    order: -1
+}
+.flexItemOrder3 {
+    order: 3;
+}
+.flexItemOrder4 {
+    order: 2;
+}
+.flexItemMargin {
+    margin: auto;
+}
+.flex1 {
+    flex: 3;
+}
+.flex2 {
+    flex: 2;
+}
+.flex3, .flex4 {
+    min-width: 0;
+    flex: 1;
+}
+
+

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CSS3 Demo</title>
+        <link rel="stylesheet" type="text/css" href="CSS/3.CSS3Demo.css">
+    </head>
+    <body>
+        CSS3 Border<br>
+        <div class="borderRadius1">border radius1</div>
+        <div class="borderRadius2">border radius2</div><br>
+        <div class="borderShadow">border shadow</div><br>
+        <div class="borderImage1">border image1</div>
+        <div class="borderImage2">border image2</div>
+        <hr>
+        CSS3 Background Image
+        <div class="backgroundOriginContainer">
+            background-origin<br>
+            <div class="backgroundOrigin1"></div>
+            <div class="backgroundOrigin2"></div>
+            <div class="backgroundOrigin3"></div>
+        </div>
+        <div class="backgroundClip">
+            background-clip<br>
+            <div class="backgroundClip1"></div>
+            <div class="backgroundClip2"></div>
+            <div class="backgroundClip3"></div>
+        </div>
+        <hr>
+        渐变色<br>
+        <div class="linearGradients1">线性渐变</div>
+        <div class="linearGradients2">重复线性渐变</div>
+        <div class="linearGradients3">重复线性</div><br>
+        <div class="radialGradients1">径向(中心)渐变-椭圆</div>
+        <div class="radialGradients2">径向(中心)不均匀渐变-椭圆</div>
+        <div class="radialGradients3">径向(中心)渐变-圆形</div>
+        <div class="radialGradients4">径向(中心)渐变-自定义圆心位置1</div>
+        <div class="radialGradients5">径向(中心)渐变-自定义圆心位置2</div>
+        <div class="radialGradients6">径向(中心)渐变-自定义圆心位置3</div>
+        <div class="radialGradients7">径向(中心)渐变-自定义圆心位置4</div>
+        <div class="radialGradientsRepeat">径向(中心)重复渐变</div><br>
+        <div class="disc"></div>
+        <div class="discSim"></div>
+        <div class="borderGardient"></div>
+        <hr>
+        2D转换<br>
+        <div class="translateDemo">translate</div>
+        <div class="rotateDemo">rotate</div>
+        <div class="scaleDemo">scale</div>
+        <div class="skewDemo">skew</div>
+        <div class="matrixDemo">matrox</div>
+        <hr>
+        过度<br>
+        <div class="transitionDemo1"></div>
+        <div class="transitionDemo2"></div>
+        <hr>
+        动画<br>
+        <div class="keyFramesDemo1"></div>
+        <div style="display: inline-block">
+            <div class="keyFramesDemo2"></div>
+        </div>
+        <div style="display: inline-block">
+            <div class="keyFramesDemo3"></div>
+        </div>
+        <hr>
+        图片布局<br>
+        <div class=filterDemoContainer>
+            <img class="filterDemo" src="./img/pineapple.jpg" alt="normal">
+            <img class="filterDemo blur" src="./img/pineapple.jpg" alt="blur">
+            <img class="filterDemo brightness" src="./img/pineapple.jpg" alt="brightness">
+            <img class="filterDemo contrast" src="./img/pineapple.jpg" alt="contrast">
+            <img class="filterDemo grayscale" src="./img/pineapple.jpg" alt="grayscale">
+            <img class="filterDemo huerotate" src="./img/pineapple.jpg" alt="huerotate">
+            <img class="filterDemo invert" src="./img/pineapple.jpg" alt="invert">
+            <img class="filterDemo opacity" src="./img/pineapple.jpg" alt="opacity">
+            <img class="filterDemo saturate" src="./img/pineapple.jpg" alt="saturate">
+            <img class="filterDemo sepia" src="./img/pineapple.jpg" alt="sepia">
+            <img class="filterDemo shadow" src="./img/pineapple.jpg" alt="shadow">
+        </div>
+        <div class="modalDemoContainer">
+            <img class="modalDemoImg" src="./img/lights.jpg" onclick="openModal()">
+            <div class="myModalDemo">
+                <span class="closeBtn" onclick="closeModal()">x</span>
+                <img class="modalContentImg">
+                <div class="modalDesc"></div>
+            </div>
+        </div>
+        <script>
+            function openModal() {
+                var img = document.getElementsByClassName("modalDemoImg")[0];
+                var modal = document.getElementsByClassName("myModalDemo")[0]; 
+                var modalContent = document.getElementsByClassName("modalContentImg")[0];
+                var modalDesc = document.getElementsByClassName("modalDesc")[0];
+                modal.style.display = "block";
+                modalContent.src = img.src;
+                modalDesc.innerHTML= "Northern Lights, Norway";
+            }
+
+            function closeModal() {
+                var modal = document.getElementsByClassName("myModalDemo")[0];
+                modal.style.display = "none";
+            }
+        </script>
+        <hr>
+        弹性盒子<br>
+        <div class="flexContainer11">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+        <div class="flexContainer12">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+        <div class="flexContainer13">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+        <div class="flexContainer14">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+
+        <div class="flexContainer21">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+        <div class="flexContainer22">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+        <div class="flexContainer23">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+        <div class="flexContainer24">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+        <div class="flexContainer25">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+
+        <div class="flexContainer31">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+        <div class="flexContainer32">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+        <div class="flexContainer33">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+        <div class="flexContainer34">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+        <div class="flexContainer35">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+
+        <div class="flexContainer41">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+        <div class="flexContainer42">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+        <div class="flexContainer43">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+
+        <div class="flexContainer51">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+        <div class="flexContainer52">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+        <div class="flexContainer53">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+        <div class="flexContainer54">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+        <div class="flexContainer55">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+        <div class="flexContainer56">
+            <div class="flexItem1">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+            <div class="flexItem4">Item4</div>
+        </div>
+
+        <dic class="flexContainer6">
+            <div class="flexItem1 flexItemOrder1">Item1</div>
+            <div class="flexItem2 flexItemOrder2">Item2</div>
+            <div class="flexItem3 flexItemOrder3">Item3</div>
+            <div class="flexItem4 flexItemOrder4">Item4</div>
+        </dic>
+        <dic class="flexContainer6">
+            <div class="flexItem1 flexItemMargin">Item1</div>
+            <div class="flexItem2">Item2</div>
+            <div class="flexItem3">Item3</div>
+        </dic>
+        <dic class="flexContainer6">
+            <div class="flexItem1 flex1">Item1</div>
+            <div class="flexItem2 flex2">Item2</div>
+            <div class="flexItem3 flex3">Item3</div>
+            <div class="flexItem4 flex4">Item4</div>
+        </dic>
+
+        <hr style="clear:both">
+        多媒体查询
+    </body>
+</html>
