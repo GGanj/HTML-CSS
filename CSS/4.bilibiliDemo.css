@@ -1,0 +1,1260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #222222;
+}
+
+/* 流光灯 */
+@keyframes chrome {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -400% 0;
+    }
+    100% {
+        background-position: -400% 0;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 25px;
+    background: black;
+}
+
+.chromeLightButton {
+    position: relative;
+    padding: 10px 25px;
+    width: 400px;
+    height: 100px;
+    font-size: 24px;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(to right, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    z-index: 1;
+    animation: chrome 6s infinite;
+}
+
+.chromeLightButton:after {
+    content: "";
+    position: absolute;
+    left: -5px;
+    right: -5px;
+    top: -5px;
+    bottom: -5px;
+    background: linear-gradient(to right, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 50px;
+    filter: blur(20px);
+    z-index: -1;
+    animation: chrome 6s infinite;
+}
+
+/* 聚光灯 */
+@keyframes spotlight {
+    0% {
+        clip-path: circle(100px at 0% 50%);
+        -webkit-clip-path: circle(100px at 0% 50%);
+    }
+    50% {
+        clip-path: circle(100px at 100% 50%);
+        -webkit-clip-path: circle(100px at 100% 50%);
+    }
+    100% {
+        clip-path: circle(100px at 0% 50%);
+        -webkit-clip-path: circle(100px at 0% 50%);
+    }
+}
+
+/* default: 1rem = 16px  */
+.spotlightString {
+    position: relative;
+    font-size: 8rem;
+    font-weight: bold;
+    color: #333333;
+}
+
+.spotlightString::after {
+    content: "SPOTLIGHT";
+    color: transparent;
+    position: absolute;
+    left: 0;
+    background: linear-gradient(to left, #c23616, #192a56, #00d2d3, yellow, #6d214f, #2e86de, #4cd137, #e84118);
+    clip-path: circle(100px at 0% 50%);
+    -webkit-clip-path: circle(100px at 0% 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: spotlight 5s infinite;
+}
+
+/* .spotlightString {
+    position: relative;
+    margin: auto;
+    font-size: 8rem;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(to left, #c23616, #192a56, #00d2d3, yellow, #6d214f, #2e86de, #4cd137, #e84118);
+    clip-path: circle(100px at 0% 50%);
+    -webkit-clip-path: circle(100px at 0% 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: spotlight 4s infinite;
+} */
+
+/* 百叶窗 */
+.shutterList {
+    max-width: 805px;
+    height: 320px;
+    overflow: hidden;
+}
+
+.shutterItem{
+    position: relative;
+    float:left;
+    list-style-type: none;
+    width: 160px;
+    border-left: 1px #fff solid;
+    box-sizing: content-box;
+    transition: all .5s ease-in-out;
+}
+
+.shutterImg {
+    width: 100%;
+    height: 320px;
+}
+
+.shutterContent {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    left: 0;
+    bottom: 0;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    background: #222222;
+    opacity: .5;
+    transition: all .25s ease-in-out;
+}
+
+.shutterList:hover .shutterItem {
+    width: 40px;
+}
+
+.shutterList .shutterItem:hover {
+    width: 640px;
+}
+
+.shutterList:hover .shutterContent {
+    color: transparent;
+    height: 0;
+}
+
+.shutterList .shutterItem:hover .shutterContent {
+    visibility: visible;
+    color: white;
+    height: 60px;
+}
+
+/* 火箭起飞 */
+
+@keyframes rocketFly {
+    0% {
+        left: 15%;
+        top: 100%;
+    }
+    100% {
+        left: 100%;
+        top: -50%;
+        transform: rotate(75deg) scale(.3);
+    }
+}
+
+.sky {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: radial-gradient(300px at top right , red, yellow , skyblue );
+    overflow: hidden;
+}
+
+.rocket {
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    left: 15%;
+    top: 100%;
+    background: green;
+}
+/* vw = viwe width vh = view height, 1vw = 1%窗口宽度 1vh=1%窗口高度 */
+.sky:hover .rocket {
+    transform: translate(80vw, -500px) rotate(60deg) scale(.5);
+    transition: all 2s ease-in;
+    /* animation: rocketFly 2s ease-in; */
+}
+
+.sky:hover .r1 {
+    transition-delay: 0;
+}
+.sky:hover .r2 {
+    transition-delay: .25s;
+}
+.sky:hover .r3 {
+    transition-delay: .5s;
+}
+.sky:hover .r4 {
+    transition-delay: .75s;
+}
+.sky:hover .r5 {
+    transition-delay: 1s;
+}
+
+/* 心跳 */
+
+@keyframes heartBeat1 {
+    25%, 50% {
+        height: 60px;
+        transform: translateY(-30px);
+    }
+    75%, 100% {
+        height: 0px;
+        transform: translateY(0px);
+    }
+}
+@keyframes heartBeat2 {
+    25%, 50% {
+        height: 125px;
+        transform: translateY(-60px);
+    }
+    75%, 100% {
+        height: 0px;
+        transform: translateY(0px);
+    }
+}
+@keyframes heartBeat3 {
+    25%, 50% {
+        height: 160px;
+        transform: translateY(-75px);
+    }
+    75%, 100% {
+        height: 0px;
+        transform: translateY(0px);
+    }
+}
+@keyframes heartBeat4 {
+    25%, 50% {
+        height: 180px;
+        transform: translateY(-60px);
+    }
+    75%, 100% {
+        height: 0px;
+        transform: translateY(0px);
+    }
+}
+@keyframes heartBeat5 {
+    25%, 50% {
+        height: 200px;
+        transform: translateY(-45px);
+    }
+    75%, 100% {
+        height: 0px;
+        transform: translateY(0px);
+    }
+}
+
+.heartList {
+    display: flex;
+    height: 300px;
+    padding-top: 100px;
+}
+.heartItem {
+    list-style: none;
+    margin-right: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+}
+
+.heartItem:nth-child(1) {
+    background: red;
+    animation: heartBeat1 4s infinite 0s;
+}
+.heartItem:nth-child(2) {
+    background: darkturquoise;
+    animation: heartBeat2 4s infinite .1s;
+}
+.heartItem:nth-child(3) {
+    background: darksalmon;
+    animation: heartBeat3 4s infinite .2s;
+}
+.heartItem:nth-child(4) {
+    background: deeppink;
+    animation: heartBeat4 4s infinite .3s;
+}
+.heartItem:nth-child(5) {
+    background: yellow;
+    animation: heartBeat5 4s infinite .4s;
+}
+.heartItem:nth-child(6) {
+    background: deeppink;
+    animation: heartBeat4 4s infinite .5s;
+}
+.heartItem:nth-child(7) {
+    background: darksalmon;
+    animation: heartBeat3 4s infinite .6s;
+}
+.heartItem:nth-child(8) {
+    background: darkturquoise;
+    animation: heartBeat2 4s infinite .7s;
+}
+.heartItem:nth-child(9) {
+    background: red;
+    animation: heartBeat1 4s infinite .8s;
+}
+
+/* 水球 */
+
+@keyframes wave {
+    0% {
+        transform: translate(-50%, -60%) rotate(0);
+    }
+    100% {
+        transform:  translate(-50%, -60%) rotate(360deg);
+    }
+}
+
+.waterBall {
+    position: relative;
+    margin-top: 50px;
+    width: 200px;
+    height: 200px;
+    background: darkturquoise;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.waterBall::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    left: -12px;
+    top: -12px;
+    border: 2px darkturquoise solid;
+    border-radius: 50%;
+}
+
+.waterBall::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -33%);
+    background: rgba(255, 255, 255, .8);
+    border-radius: 40%;
+    animation: wave 5s  infinite linear;
+    background-clip: text;
+    z-index: -1;
+}
+
+.waterBallTitle {
+    margin-top: 15%;
+    font-size: 20px;
+    text-align: center;
+    color: blue;
+    z-index: -20;
+}
+
+/* 爱心 */
+@keyframes loveBackground {
+    25% {
+        background: white;
+    }
+    100% {
+        background: #eb3f84;
+    }
+}
+@keyframes loveMain {
+    25% {
+        border-radius: 10px;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    50% {
+        background: #eb3f84;
+    }
+    75% {
+        border-radius: 50%;
+    }
+    100% {
+        background: white;
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+}
+@keyframes loveLeft{
+    25% {
+        transform: translateX(-50%);
+    } 
+    50% {
+        background: #eb3f84;
+    }
+    75% {
+        transform: translateX(0);
+    }
+    100% {
+        background: white;
+    }
+
+}
+@keyframes loveRight {
+    25% {
+        transform: translateY(-50%);
+    }
+    50% {
+        background: #eb3f84;
+    }
+    75% {
+        transform: translateY(0);
+    }
+    100% {
+        background: white;
+    }
+}
+.loveContainer{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: #eb3f84;
+    animation: loveBackground 4s infinite;
+    transition: all 1s;
+}
+
+.love {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: white;
+    border-radius: 50%;
+    animation: loveMain 4s infinite;
+    transition: all 1s;
+}
+
+.love::before {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    transform: translateX(0);
+    background: white;
+    border-radius: 50%;
+    animation: loveLeft 4s infinite;
+    transition: all 1s;
+}
+
+.love::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    transform: translateY(0);
+    background: white;
+    border-radius: 50%;
+    animation: loveRight 4s infinite;
+    transition: all 1s;
+}
+
+/* 折叠卡片 */
+.cardContainer {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    /* font-size: 0; */
+    perspective: 1000px;
+}
+
+.cardLeft {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: all 1s ease;
+    z-index: 2;
+}
+
+.cardFont {
+    position: absolute;
+    background: white;
+}
+
+.cardImg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 101% 0, 101% 90%, 57% 90%, 50% 100%, 43% 90%, 0 90%);
+}
+
+.cardContent {
+    width: 300px;
+    height: 50px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 50px;
+    background: white;
+}
+
+.cardBack {
+    position: absolute;
+    width: 300px;
+    height: 350px;
+    background: white;
+    transform: rotateY(180deg);
+}
+
+.videoContainer {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(0 0, 100% 0, 75% 50%, 100% 100%, 0 100%);
+    border: 1px gray solid;
+}
+
+.cardRight {
+    position: absolute;
+    width: 300px;
+    height: 350px;
+    padding: 10px;
+    color: black;
+    background: white;
+    border-left: 1px gray solid;
+    transition: all 1s ease;
+    z-index: 1;
+}
+
+.cardRightTitle {
+    width: 100%;
+    padding-top: 5px;
+    color: skyblue;
+    text-align: center;
+}
+
+.cardRightDesc {
+    margin: 40px 20px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.cardRightBtn {
+    position: relative;
+    width: 200px;
+    height: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: 600;
+    color: skyblue;
+    background: transparent;
+    border: 3px skyblue solid;
+}
+
+.cardContainer:hover .cardLeft {
+    transform: translateX(50%) rotateY(-180deg);
+}
+
+.cardContainer:hover .cardRight {
+    transform: translateX(50%);
+}
+
+/* 按钮悬停 */
+
+.btn1 {
+    background-image: url("../img/btn1.jpg");
+}
+.btn2 {
+    background-image: url("../img/btn2.jpg");
+}
+.btn3 {
+    background-image: url("../img/btn3.jpg");
+}
+
+.myBtn{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 15px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 16px rgba(255, 255, 255, .6), 0 1px 2px rgba(0, 0, 0, .1);
+    transition: all 1s ease;
+}
+
+/* .myBtn::after {
+    content: "";
+    position: absolute;
+    width: 168px;
+    height: 168px;
+    left: 0;
+    top: 0;
+    border: 16px rgba(255, 255, 255, 0.5) solid;
+    border-radius: 50%;
+    transition: all 1s ease;
+    pointer-events: none;
+} */
+
+.btnHoverd {
+    width: 200px;
+    height: 200px;
+    background: rgba(63, 147, 147, 0);
+    border-radius: 50%;;
+    opacity: .75;
+    visibility: none;
+    transform: scale(0);
+    transition: all 1s ease;
+}
+
+.btnTitle {
+    padding-top: 40px;
+    color: white;
+    text-align: center;
+}
+
+.btnDesc {
+    margin-top: 30px;
+    margin-left: 20%;
+    padding-top: 5px;
+    width: 60%;
+    border-top: 1px white solid;
+    color: white;
+}
+
+/* .myBtn:hover::after {
+    width: 200px;
+    height: 200px;
+    border: 0px rgba(255, 255, 255, 0) solid;
+} */
+
+.myBtn:hover {
+    box-shadow: inset 0 0 0 0px rgba(255, 255, 255, .1), 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+.myBtn:hover .btnHoverd {
+    visibility: visible;
+    background: rgba(63, 147, 147, .8);
+    transform: scale(1);
+}
+.btnDesc span:hover  {
+    color: yellow;
+}
+
+/* 3D旋转 */
+
+@keyframes roll {
+    0% {
+        transform: rotateX(-10deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(-10deg) rotateY(360deg);
+    }
+}
+
+.cubeBox {
+    position: relative;
+    width: 200px;
+    height: 400px;
+    perspective: 800px;
+    transform-style: preserve-3d;
+}
+
+.bgVideo {
+    position: absolute;
+    width: 100%;
+    height: 450px;
+    object-fit: fill;
+}
+
+.sCube {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 150px;
+    left: 50px;
+    transform-style: preserve-3d;
+    transform: rotateX(-10deg) rotateY(45deg);
+    animation: roll 5s linear infinite;
+}
+
+.sCube li {
+    position: absolute;
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+}
+
+.sCube li video{
+    width: 100%;
+    height: 100%;
+}
+
+.sCube li:nth-child(1) {
+    transform: rotateX(0deg) translateZ(50px);
+}
+.sCube li:nth-child(2) {
+    transform: rotateX(0deg) translateZ(-50px);
+}
+.sCube li:nth-child(3) {
+    transform: rotateX(-90deg) translateZ(50px);
+}
+.sCube li:nth-child(4) {
+    transform: rotateX(90deg) translateZ(50px);
+}
+.sCube li:nth-child(5) {
+    transform: rotateY(90deg) translateZ(50px);
+}
+.sCube li:nth-child(6) {
+    transform: rotateY(-90deg) translateZ(50px);
+}
+
+.lCube {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 100px;
+    transform-style: preserve-3d;
+    transform: rotateX(-10deg) rotateY(45deg);
+    animation: roll 5s linear infinite;
+}
+
+.lCube li {
+    position: absolute;
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    transition: all .5s linear;
+}
+
+.lCube li video{
+    width: 100%;
+    height: 100%;
+}
+
+.lCube li:nth-child(1) {
+    transform: rotateX(0deg) translateZ(100px);
+}
+.lCube li:nth-child(2) {
+    transform: rotateX(0deg) translateZ(-100px);
+}
+.lCube li:nth-child(3) {
+    transform: rotateX(-90deg) translateZ(100px);
+}
+.lCube li:nth-child(4) {
+    transform: rotateX(90deg) translateZ(100px);
+}
+.lCube li:nth-child(5) {
+    transform: rotateY(90deg) translateZ(100px);
+}
+.lCube li:nth-child(6) {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.cubeBox:hover .lCube li:nth-child(1) {
+    transform: rotateX(0deg) translateZ(200px);
+}
+.cubeBox:hover .lCube li:nth-child(2) {
+    transform: rotateX(0deg) translateZ(-200px);
+}
+.cubeBox:hover .lCube li:nth-child(3) {
+    transform: rotateX(-90deg) translateZ(200px);
+}
+.cubeBox:hover .lCube li:nth-child(4) {
+    transform: rotateX(90deg) translateZ(200px);
+}
+.cubeBox:hover .lCube li:nth-child(5) {
+    transform: rotateY(90deg) translateZ(200px);
+}
+.cubeBox:hover .lCube li:nth-child(6) {
+    transform: rotateY(-90deg) translateZ(200px);
+}
+
+/* 花瓣加载 */
+@keyframes flowerBackground {
+    0%, 100% {
+        background: #ff8a00;
+    }
+    50% {
+        background: #e52e71;
+    }
+
+}
+
+@keyframes flowerRoll {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(.4);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes petalBloom {
+    0%, 100% {
+        height: 380px;
+    }
+    50% {
+        height: 0px;
+    }
+}
+
+.flowerContainer {
+    width: 100%;
+    height: 500px;
+    background: #ff8a00;
+    animation: flowerBackground 3s infinite linear;
+}
+
+.myFlower {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    animation: flowerRoll 3s infinite linear;
+}
+
+.myFlower::before {
+    content: "";
+    width: 90px;
+    height: 90px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.petal {
+    position: absolute;
+    perspective: 500px;
+}
+
+.petal::before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 380px;
+    left: 50%;
+    background: #fff;
+    border-radius: 40px 40px 0 0;
+    transform: rotateX(-70deg);
+    transform-origin: top center;
+    animation: petalBloom 3s infinite linear;
+}
+
+.petal:nth-child(1) {
+    transform: rotate(0deg);
+}
+.petal:nth-child(2) {
+    transform: rotate(60deg);
+}
+.petal:nth-child(3) {
+    transform: rotate(120deg);
+}
+.petal:nth-child(4) {
+    transform: rotate(180deg);
+}
+.petal:nth-child(5) {
+    transform: rotate(240deg);
+}
+.petal:nth-child(6) {
+    transform: rotate(300deg);
+}
+
+.myFlower:hover::before, .myFlower:hover .petal {
+    opacity: .8;
+}
+
+/* 选项卡 */
+
+.tabCard {
+    position: relative;
+    margin: 10px;
+    width: 500px;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px gray;
+    background: #fff
+}
+
+.contentContainer {
+    position: relative;
+    margin: 10px;
+    padding: 10px;
+    height: 230px;
+}
+
+.contentContainer input {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    margin: 10px;
+    height: 20px;
+
+    display: none;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+    z-index: 2;
+}
+.slide label {
+    display: inline-block;
+    width: 50px;
+    height: 10px;
+    margin: 0 3px;
+    background: #d9d9d9;
+    border-radius: 10px;
+    transition: .25s;
+    
+}
+
+.content {
+    position: absolute;
+    width: 410px;
+    height: 200px;
+    left: 25px;
+    top: 25px;
+    background: #fff;
+    opacity: 0;
+    transition: .5s;
+}
+
+.leftContent {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    vertical-align: top;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.leftImg{
+    width: 100%;
+    height: 100%;
+}
+
+.rightContent {
+    display: inline-block;
+    width: 250px;
+    height: 150px;
+    padding: 10px;
+}
+
+.rightContent h3 {
+    font-family: inherit;
+}
+.rightContent p {
+    font-size: 16px;
+    text-align: justify;
+}
+.rightContent button {
+    float: right;
+    width: 100px;
+    height: 25px;
+    margin-top: 20px;
+    padding: 0 10px;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 1);
+    border: none;
+    border-radius: 20px;
+}
+
+.rightContent button:hover {
+    color: black;
+    background: #cecece
+}
+
+#slide_1:checked~.slide .slideBtn1 {
+    background: black;
+}
+#slide_2:checked~.slide .slideBtn2 {
+    background: black;
+}
+#slide_3:checked~.slide .slideBtn3 {
+    background: black;
+}
+
+#slide_1:checked~.item1 {
+    opacity: 1;
+}
+#slide_2:checked~.item2 {
+    opacity: 1;
+}
+#slide_3:checked~.item3 {
+    opacity: 1;
+}
+
+/* 唱片机 */
+@keyframes spin {
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes shake {
+    0% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+    100% {
+        transform: rotate(-3deg);
+    }
+}
+
+.recordContainer {
+    position: relative;
+    width: 250px;
+    height: 200px;
+    background: #9CD8BD;
+    border-radius: 10px;
+}
+
+.record {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 30px;
+    left: 20px;
+    background: black;
+    border-radius: 50%;
+    animation: spin 2s infinite linear;
+}
+.record::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-radial-gradient(black, black 5px, #1C1C1C 6px, #1C1C1C 7px);
+    border-radius: 50%;
+}
+
+.inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(white, white 50%, pink 50%, pink 100%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+.inner::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    top: 50%;
+    background: black;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+.inner::after {
+    content: "CD Play";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    font-size: 1px;
+    line-height: 25px;
+    text-align: center;
+}
+.light {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 30px;
+    left: 20px;
+    background:linear-gradient(45deg, transparent,rgba(255,255,255,0.2) 45%,rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.2) 55%, transparent);
+    border-radius: 50%;
+}
+.arm {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 25px;
+    right: 20px;
+    background: #939393;
+    border: 5px gray solid;
+    border-radius: 50%;
+    animation: shake 2s infinite linear;
+}
+.rod {
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    top: 15px;
+    right: 15px;
+    border: 10px #939393 solid;
+    border-top: none;
+    border-left: none;
+    border-radius: 0 0 30% 0;
+    transform: skew(-20deg, -20deg);
+    transform-origin: top right;
+}
+
+.rod::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    top: 60px;
+    left: -10px;
+    background: gray;
+    border-radius: 20%;
+    transform: skew(20deg, 20deg) rotate(75deg);
+}
+
+/* 波动旋转 */
+@keyframes runCircle {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+        transform: translate3d(0, 0, 560px);
+    }
+}
+
+.circle {
+    display: flex;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    perspective: 1600px;
+}
+.circle i {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background:rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px 0 white;
+    animation: runCircle 4s infinite ease-in-out;
+    opacity: 0;
+}
+
+/* 盾型动画 */
+.shieldContainer {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: lightseagreen;
+}
+.shieldBtnContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 50px;
+    margin: 10px 50px;
+    z-index: 2;
+}
+.shieldBtn {
+    width: 60px;
+    height: 30px;
+    margin: 10px 20px;
+}
+.shield {
+    width: 500px;
+    height: 500px;
+    margin: 10px 50px;
+    padding: 0 40px;
+}
+
+/* 3D 轮转 */
+@keyframes rotation3d{
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(-180deg);
+    }
+    100%{
+        transform: rotateY(-360deg);
+    }
+}
+
+.rotationContainer {
+    width: 300px;
+    height: 200px;
+    perspective: 800px;
+}
+
+.myRotation {
+    list-style-type: none;
+    transform-style: preserve-3d;
+    animation: rotation3d 8s infinite linear;
+}
+
+.myRotation li {
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    border: 4px black solid;
+    transform-origin: right;
+}
+.myRotation li:nth-child(1) {
+    background-image: url("../img/rotation3d/1.jpg");
+    background-size: cover;
+    transform: rotateY(0deg);
+}
+.myRotation li:nth-child(2) {
+    background-image: url("../img/rotation3d/2.jpg");
+    background-size: cover;
+    transform: rotateY(60deg);
+}
+.myRotation li:nth-child(3) {
+    background-image: url("../img/rotation3d/3.jpg");
+    background-size: cover;
+    transform: rotateY(120deg);
+}
+.myRotation li:nth-child(4) {
+    background-image: url("../img/rotation3d/4.jpg");
+    background-size: cover;
+    transform: rotateY(180deg);
+}
+.myRotation li:nth-child(5) {
+    background-image: url("../img/rotation3d/5.jpg");
+    background-size: cover;
+    transform: rotateY(240deg);
+}
+.myRotation li:nth-child(6) {
+    background: lightseagreen;
+    background-size: cover;
+    transform: rotateY(300deg);
+}
+
