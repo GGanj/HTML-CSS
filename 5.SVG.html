@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>svg</title>
+    <link rel="stylesheet" type="text/css" href="./CSS/5.svg.css">
+</head>
+
+<body>
+    <div class="container">
+        <span>embed标签中使用SVG：<br><embed src="./img/circle1.svg" type=""><br></span>
+        <span>object标签中使用SVG：<br><object data="./img/circle1.svg" type=""></object><br></span>
+        <span>iframe标签中使用SVG：<br><iframe src="./img/circle1.svg" frameborder="0"></iframe><br></span>
+        <span>直接在html中嵌入SVG：<br>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />
+            </svg>
+        </span>
+        <br>
+        <span>链接到SVG: <br><a href="./img/circle1.svg">svg</a></span>
+    </div>
+    <hr>
+    矩形<br>
+    <svg class="svgContainer">
+        <!-- fill:填充颜色; stroke:边框颜色; stroke-width:边框宽度 -->
+        <rect width="300" height="200" fill="red" stroke="green" stroke-width=10></rect>
+    </svg>
+    <svg class="svgContainer">
+        <!-- fill-opacity:填充颜色透明度; stroke-opicaty:边框透明度 -->
+        <rect width=150 height=150 x=50 y=20 fill=blue fill-opacity=.1 stroke=pink stroke-width=20 stroke-opicaty=.9>
+        </rect>
+    </svg>
+    <svg class="svgContainer">
+        <!-- rx ry 圆角弧度 -->
+        <rect width=150 height=150 x=50 y=20 rx=20 ry=20 fill=green stroke=yellow stroke-width=20 opicaty=.5></rect>
+    </svg>
+    <hr>
+    圆形/椭圆<br>
+    <svg class="svgContainer">
+        <!-- 圆形：cx cy 圆心坐标；r 半径 -->
+        <circle cx=100 cy=100 r=50 fill=transparent stroke=black stroke-width=5></circle>
+    </svg>
+    <svg class="svgContainer">
+        <!-- 椭圆：cx cy 椭圆中心坐标；rx 水平半径 ry 垂直半径 -->
+        <ellipse cx=100 cy=100 rx=80 ry=30 fill=transparent stroke=black stroke-width=5></ellipse>
+    </svg>
+    <hr>
+    直线/折线<br>
+    <svg class="svgContainer">
+        <!-- x1 起点x坐标 y1 起点y坐标；x2终点x坐标 y2终点y坐标 -->
+        <line x1="0" y1="0" x2="200" y2="200" stroke="red" stroke-width="10"></line>
+    </svg>
+    <svg class="svgContainer">
+        <!-- x1 起点x坐标 y1 起点y坐标；x2终点x坐标 y2终点y坐标 -->
+        <polyline points="20,20 40,25 60,40 80,120 120,140 200,180" fill=transparent stroke="red" stroke-width="10">
+        </polyline>
+    </svg>
+    <hr>
+    多边形<br>
+    <svg class="svgContainer">
+        <!-- 逗号两边分别为x/y坐标 -->
+        <polygon points="200,10 250,190 160,210" fill=lime stroke=purple stroke-width=5></polygon>
+    </svg>
+    <svg class="svgContainer">
+        <!-- 逗号两边分别为x/y坐标 -->
+        <polygon points="220,10 300,210 170,250 123,234" fill=lime stroke=purple stroke-width=5></polygon>
+    </svg>
+    <svg class="svgContainer">
+        <!-- fill-rule: 填充规则，通过算法判定属于图形内部部分并进行填充； 从某点向任意方向做射线，记路径从射线穿过的方向及次数-->
+        <!-- nonzero：从左向右穿过射线记+1，从右向左穿过射线记-1。如果为零，该点在图形外部，非零则认为在图形内部 -->
+        <polygon points="100,10 40,198 190,78 10,78 160,198" fill=lime stroke=purple stroke-width=5 fill-rule=nonezero>
+        </polygon>
+    </svg>
+    <svg class="svgContainer">
+        <!-- evenodd：从左向右穿过射线记+1，从右向左穿过射线记-1。如为奇数，认为该点在图形内部，如为偶数，认为该点在图形外部 -->
+        <polygon points="100,10 40,198 190,78 10,78 160,198" fill=lime stroke=purple stroke-width=5 fill-rule=evenodd>
+        </polygon>
+    </svg>
+    <hr>
+    路径<br>
+    <svg class="svgContainer">
+        <!-- 大写表示绝对定位 -->
+        <path d="M150,0 L75,200 L225,200 Z"></path>
+    </svg>
+    <svg class="svgContainer">
+        <!-- 小写表示相对定位 -->
+        <path d="M10,290 l140,-280" stroke=red stroke-width=3></path>
+        <path d="M150,10 l140,280" stroke=red stroke-width=3></path>
+        <path d="M80,150 l140,0" stroke=green stroke-width=3></path>
+        <path d="M10,290 q140,-280 280,0" fill=transparent stroke=blue stroke-width=3></path>
+        <!-- g 可集合一组相似元素 -->
+        <g>
+            <circle cx=10 cy=290 r=3 stroke=black stroke-width=3></circle>
+            <circle cx=150 cy=10 r=3 stroke=black stroke-width=3></circle>
+            <circle cx=290 cy=290 r=3 stroke=black stroke-width=3></circle>
+        </g>
+        <g>
+            <!-- svg 文本 -->
+            <text x=0 y=300 dx=30>A</text>
+            <text x=150 y=0 dx=-5 dy=50>B</text>
+            <text x=300 y=300 dx=-30>C</text>
+        </g>
+    </svg>
+    <hr>
+    文本<br>
+    <svg class="svgContainer">
+        <text x=0 y=15 fill=red>this is svg</text>
+    </svg>
+    <svg class="svgContainer">
+        <!-- 旋转角度 锚点 -->
+        <text x=0 y=15 fill=red transform="rotate(30 20,40)">this is svg</text>
+    </svg>
+    <svg class="svgContainer">
+        <!-- defs 引用容器，元素不会展示 -->
+        <defs>
+            <path id=path1 d="M75,20 a1,1 0 0,0 100,0 "></path>
+        </defs>
+        <text x=0 y=15 fill=red>
+            <!-- 引用路径上的文字 -->
+            <textPath xlink:href="#path1">this is svg this is svg</textPath>
+        </text>
+    </svg>
+    <svg class="svgContainer">
+        <text x=0 y=15 fill=red>
+            Severial lines:
+            <!-- 多行文本 -->
+            <tspan x=10 y=45 fill=green>first line</tspan>
+            <tspan x=10 y=70 fill=blue>second line</tspan>
+        </text>
+    </svg>
+    <svg class="svgContainer">
+        <a xlink:href="#">
+            <text x=0 y=15 fill=red>SVG link</text>
+        </a>
+    </svg>
+    <hr>
+    stroke属性<br>
+    <svg class="svgContainer">
+        <!-- stroke-linecap 控制路径终端型装 -->
+        <path stroke="black" stroke-width="6" stroke-linecap="butt" d="M5 20 l215 0" />
+        <path stroke="black" stroke-width="6" stroke-linecap="round" d="M5 40 l215 0" />
+        <path stroke="black" stroke-width="6"stroke-linecap="square" d="M5 60 l215 0" />
+    </svg>
+    <svg class="svgContainer">
+        <!-- stroke-dasharray 虚线样式 -->
+        <path stroke="black" stroke-width="6" stroke-dasharray="5,5" d="M5 20 l215 0" />
+        <path stroke="black" stroke-width="6" stroke-dasharray="10,10" d="M5 40 l215 0" />
+        <path stroke="black" stroke-width="6" stroke-dasharray="20,10,5,5,5,10" d="M5 60 l215 0" />
+    </svg>
+    <hr>
+    变型/按路径移动<br>
+    <svg class="svgContainer">
+        <rect x="0" y="100" width="300" height="200" fill="lime">
+            <animate attributeName="x" begin="0s" dur="4s" from="300" to="0"/>
+            <animate attributeName="y" begin="0s" dur="4s" from="300" to="100"/>
+            <animate attributeName="width" begin="0s" dur="4s" from="0" to="300"/>
+            <animate attributeName="height" begin="0s" dur="4s" from="0" to="200"/>
+            <animate id="a5" attributeName="fill" begin="0s" dur="2s" from="lime" to="red"/>
+            <animate attributeName="fill" begin="a5.end" dur="2s" from="red" to="lime"/>
+        </rect>
+    </svg>
+    <svg class="svgContainer">
+        <text x="0" y="0" fill=red font-size="24">
+            It's SVG!
+            <animate attributeName="fill" begin="0" dur="4s" from="red" to="blue"/>
+            <animateMotion path="M0,0 L300,300"  begin="0s" dur="4s"/>
+            <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="-90" to="0" begin="0s" dur="4s"/>
+            <animateTransform attributeName="transform" attributeType="XML" type="scale" from="1" to="2" begin="0s" dur="4s" additive="sum"/>
+        </text>
+    </svg>
+    <hr>
+</body>
+
+</html>

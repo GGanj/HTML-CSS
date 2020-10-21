@@ -6,6 +6,14 @@
 body {
     background: #222222;
 }
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 25px;
+    background: black;
+}
 
 /* 流光灯 */
 @keyframes chrome {
@@ -18,15 +26,6 @@ body {
     100% {
         background-position: -400% 0;
     }
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 5px;
-    padding: 25px;
-    background: black;
 }
 
 .chromeLightButton {

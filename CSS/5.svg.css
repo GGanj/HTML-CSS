@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 矩形 */
+.svgContainer {
+    width: 300px;
+    height: 300px;
+}
