@@ -285,7 +285,7 @@
         function startWorker() {
             let ele = document.getElementById("workerResult");
             if(typeof(Worker) !== undefined) {
-                webWorkerInstance = new Worker("JS/webWorker.js");
+                webWorkerInstance = new Worker("JS/1.webWorker.js");
                 webWorkerInstance.onmessage = function(event) {
                 ele.innerHTML = event.data;
             }

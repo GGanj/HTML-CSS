@@ -8,7 +8,98 @@
     <body>
         <!-- 环形loading -->
         <div class="container">
-            
+            <div class="cricleLoading">
+                <svg class="circleContainer">
+                    <circle class="circleOne"></circle>
+                    <circle class="circleTwo"></circle>
+                    <circle class="circleThree"></circle>
+                    <circle class="pointOne"></circle>
+                    <circle class="pointTwo"></circle>d
+                    <circle class="pointThree"></circle>
+                </svg>
+            </div>
+        </div>
+        <!-- 文字流光 -->
+        <div class="container">
+            <div class="textFlash">
+                <svg class="flashContainer">
+                    <g>
+                        <text class="textFlashOne" x=40 y=130>SVG Demo</text>
+                        <text class="textFlashTwo" x=40 y=130>SVG Demo</text>
+                        <text class="textFlashThree" x=40 y=130>SVG Demo</text>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <!-- 轮播 -->
+        <div class="container">
+            <div class="carousel">
+                <div class="wrapper">
+                    <img src="./img/rotation3d/1.jpg" alt="">
+                    <img src="./img/rotation3d/2.jpg" alt="">
+                    <img src="./img/rotation3d/4.jpg" alt="">
+                    <img src="./img/rotation3d/1.jpg" alt="">
+                </div>
+                <div class="pagination">
+                    <span class="paginationPoint"></span>
+                    <span class="paginationPoint"></span>
+                    <span class="paginationPoint"></span>
+                </div>
+                <div class="navigation">
+                    <a href="javascript:;" class="navLeft" onclick="leftMove()"><</a>
+                    <a href="javascript:;" class="navRight" onclick="rightMove()">></a>
+                </div>
+            </div>
+            <script src="./JS/4-2.Carousel.js"></script>
+        </div>
+        <!-- 打地鼠 -->
+        <div class="container">
+            <div class="hamster">
+                <div class="pitContainer">
+                    <div class="pit">
+                        <input type="checkbox" id="pit0" name="hamster" value="0" onclick="hitHamster(event, 0)">
+                        <label for="pit0"></label>
+                    </div>
+                    <div class="pit">
+                        <input type="checkbox" id="pit1" name="hamster" value="1" onclick="hitHamster(event, 1)">
+                        <label for="pit1"></label>
+                    </div>
+                    <div class="pit">
+                        <input type="checkbox" id="pit2" name="hamster" value="2" onclick="hitHamster(event, 2)">
+                        <label for="pit2"></label>
+                    </div>
+                    <div class="pit">
+                        <input type="checkbox" id="pit3" name="hamster" value="3" onclick="hitHamster(event, 3)">
+                        <label for="pit3"></label>
+                    </div>
+                    <div class="pit">
+                        <input type="checkbox" id="pit4" name="hamster" value="4" onclick="hitHamster(event, 4)">
+                        <label for="pit4"></label>
+                    </div>
+                    <div class="pit">
+                        <input type="checkbox" id="pit5" name="hamster" value="5" onclick="hitHamster(event, 5)">
+                        <label for="pit5"></label>
+                    </div>
+                    <div class="pit">
+                        <input type="checkbox" id="pit6" name="hamster" value="6" onclick="hitHamster(event, 6)">
+                        <label for="pit6"></label>
+                    </div>
+                    <div class="pit">
+                        <input type="checkbox" id="pit7" name="hamster" value="7" onclick="hitHamster(event, 7)">
+                        <label for="pit7"></label>
+                    </div>
+                    <div class="pit">
+                        <input type="checkbox" id="pit8" name="hamster" value="8" onclick="hitHamster(event, 8)">
+                        <label for="pit8"></label>
+                    </div>
+                </div>
+                <div class="menu">
+                    <span id="score">得分：<label>0</label></span>
+                    <button id="start" class="hamsterBtn" onclick="startHamster()">开始</button>
+                    <button id="stop" class="hamsterBtn" onclick="stopHamster()">停止</button>
+                </div>
+            </div>
+            <script src="./JS/4-2.hamster.js"></script>
         </div>
     </body>
 </html>

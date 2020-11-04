@@ -14,3 +14,315 @@ body {
     padding: 25px;
     background: black;
 }
+
+/* 环形loading */
+/* stroke-dashoffset 偏移值 */
+@keyframes oneRoll {
+    0%, 100% {
+        stroke-dasharray: 1 628;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 40 628;
+        stroke-dashoffset: 0;
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes twoRoll {
+    0%, 100% {
+        stroke-dasharray: 1 628;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 40 628;
+        stroke-dashoffset: -45;
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes threeRoll {
+    0%, 100% {
+        stroke-dasharray: 1 628;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 40 628;
+        stroke-dashoffset: -90;
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes wave {
+    0%, 100% {
+        cy: 150;
+    }
+    33% {
+        cy: 140;
+    }
+    66% {
+        cy: 160;
+    }
+}
+.cricleLoading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 400px;
+    background: darkturquoise;
+}
+.circleContainer {
+    width: 300px;
+    height: 300px;
+}
+.circleOne {
+    cx: 150;
+    cy: 150;
+    r: 100;
+    fill: transparent;
+    stroke: red;
+    stroke-width: 30;
+    stroke-dasharray: 1 628;
+    stroke-dashoffset: 0;
+    transform-origin: center center;
+    animation: oneRoll 3s infinite ease-in-out;
+}
+.circleTwo {
+    cx: 150;
+    cy: 150;
+    r: 100;
+    fill: transparent;
+    stroke: blue;
+    stroke-width: 30;
+    stroke-dasharray: 1 628;
+    stroke-dashoffset: 0;
+    transform-origin: center center;
+    animation: twoRoll 3s infinite ease-in-out;
+}
+.circleThree {
+    cx: 150;
+    cy: 150;
+    r: 100;
+    fill: transparent;
+    stroke: green;
+    stroke-width: 30;
+    stroke-dasharray: 1 628;
+    stroke-dashoffset: 0;
+    transform-origin: center center;
+    animation: threeRoll 3s infinite ease-in-out;
+}
+.pointOne {
+    cx: 120;
+    cy: 150;
+    r: 10;
+    fill: red;
+    animation: wave 1s infinite ease-in-out;
+    animation-delay: 0;
+}
+.pointTwo {
+    cx: 150;
+    cy: 150;
+    r: 10;
+    fill: blue;
+    animation: wave 1s infinite ease-in-out;
+    animation-delay: .2s;
+
+}
+.pointThree {
+    cx: 180;
+    cy: 150;
+    r: 10;
+    fill: green;
+    animation: wave 1s infinite ease-in-out;
+    animation-delay: .4s;
+}
+
+/* 流光文字 */
+@keyframes flash1 {
+    0%, 100% {
+        stroke-dasharray: 30;
+    }
+    50% {
+        stroke-dasharray: 60;
+    }
+}
+@keyframes flash2 {
+    0%, 100% {
+        stroke-dasharray: 90;
+    }
+    33% {
+        stroke-dasharray: 10;
+    }
+    66% {
+        stroke-dasharray: 70;
+    }
+}
+@keyframes flash3 {
+    0%, 100% {
+        stroke-dasharray: 50;
+    }
+    50% {
+        stroke-dasharray: 20;
+    }
+}
+.textFlash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 400px;
+    background: rgb(2, 2, 73);
+}
+.flashContainer {
+    width: 500px;
+    height: 200px;
+    background: rgba(0, 0, 0, .5);
+}
+.textFlashOne {
+    fill: transparent;
+    font-size: 80px;
+    stroke: lightskyblue;
+    stroke-width: 2px;
+    animation: flash1 8s infinite linear;
+}
+.textFlashTwo{
+    fill: transparent;
+    font-size: 80px;
+    stroke: red;
+    stroke-width: 2px;
+    animation: flash2 8s infinite linear;
+}
+.textFlashThree{
+    fill: transparent;
+    font-size: 80px;
+    stroke: yellow;
+    stroke-width: 2px;
+    animation: flash3 8s infinite linear;
+}
+
+/* 轮播 */
+.carousel {
+    position: relative;
+    width: 400px;
+    height: 300px;
+	overflow: hidden;
+}
+.wrapper {
+    position: absolute;
+    display: flex;
+    width: 1600px;
+    left: 0px;
+    transition-duration: .3s;
+}
+.wrapper img{
+    width: 400px;
+    height: 300px;
+}
+.pagination {
+    position: absolute;
+    padding: 5px; 
+    background-color: rgba(0, 0, 0, .7);
+    border-radius: 25px;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    font-size: 0;
+}
+.paginationPoint {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0px 5px;
+    background-color: white;
+    border-radius: 50%;
+}
+.pagination .active {
+    background-color: red;
+}
+.navLeft {
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, .7);
+    background-color: rgba(0, 0, 0, .5);
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration-line: none;
+}
+.navRight {
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, .7);
+    background-color: rgba(0, 0, 0, .5);
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration-line: none;
+}
+
+/* 打地鼠 */
+.hamster {
+    width: 600px;
+    height: 400px;
+    background: darkturquoise;
+}
+.pitContainer {
+    display: grid;
+    justify-content: space-around;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px;
+    cursor: url("../img/hamster/hammer.ico"), auto;
+}
+.pit {
+    width: 100px;
+    height: 100px;
+    background: url("../img/hamster/hole.png");
+    background-size: 100% 100%;
+}
+.pit input {
+    display: none;
+}
+.pit label {
+    display: block;
+    width: 100px;
+    height: 100px;
+    cursor: url("../img/hamster/hammer.ico"), auto;
+}
+.pit input:checked + label {
+    background-color: orange;
+    background: url("../img/hamster/mouse.png") no-repeat;
+    background-size: 70% 70%;
+    background-position: center center;
+}
+.menu {
+    width: 90%;
+    height: 50px;
+    margin: 25px 5%;
+}
+#score {
+    display: inline-block;
+    margin: 10px 50px;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+}
+.hamsterBtn {
+    width: 100px;
+    height: 30px;
+    margin: 10px 20px;
+    background-color: papayawhip;
+    border-radius: 5px x;
+}
