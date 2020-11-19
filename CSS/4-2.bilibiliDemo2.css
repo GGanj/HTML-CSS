@@ -326,3 +326,84 @@ body {
     background-color: papayawhip;
     border-radius: 5px x;
 }
+/* 折扇 */
+.foldContainer {
+    width: 600px;
+    height: 400px;
+    background: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.fold {
+    position: relative;
+    list-style-type: none;
+    width: 100px;
+    height: 250px;
+    transition-duration: .75s;
+}
+.leaf {
+    position: absolute;
+    width: 100px;
+    height: 250px;
+    transform-origin: center bottom;
+    transition-duration: .75s;
+}
+.leaf:nth-child(5n) {
+    background-color: darkgreen;
+}
+.leaf:nth-child(5n+1) {
+    background-color: lightseagreen;
+}
+.leaf:nth-child(5n+2) {
+    background-color: darkgrey;
+}
+.leaf:nth-child(5n+3) {
+    background-color: lightpink;
+}
+.leaf:nth-child(5n+4) {
+    background-color: darkorange;
+}
+/* .fold:hover {
+    width: 500px;
+} */
+.fold:hover > :nth-child(1) {
+    transform: rotate(-90deg);
+}
+.fold:hover > :nth-child(2) {
+    transform: rotate(-75deg);
+}
+.fold:hover > :nth-child(3) {
+    transform: rotate(-60deg);
+}
+.fold:hover > :nth-child(4) {
+    transform: rotate(-45deg);
+}
+.fold:hover > :nth-child(5) {
+    transform: rotate(-30deg);
+}
+.fold:hover > :nth-child(6) {
+    transform: rotate(-15deg);
+}
+.fold:hover > :nth-child(7) {
+    transform: rotate(0deg);
+}
+.fold:hover > :nth-child(8) {
+    transform: rotate(15deg);
+}
+.fold:hover > :nth-child(9) {
+    transform: rotate(30deg);
+}
+.fold:hover > :nth-child(10) {
+    transform: rotate(45deg);
+}
+.fold:hover > :nth-child(11) {
+    transform: rotate(60deg);
+}
+.fold:hover > :nth-child(12) {
+    transform: rotate(75deg);
+}
+.fold:hover > :nth-child(13) {
+    transform: rotate(90deg);
+}
